@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <title>Learn C programming</title>
+    <meta charset="utf-8">
+    <style>
+       h1,h2,h3,h4 {
+          font-family: Comic Sans MS;
+       }
+       p,tr,td,li{
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          line-height: 25px;
+       }
+       span,pre {
+          font-size: 16px;
+          line-height: 25px;
+       }
+    </style>
+    <body>
+    <div class="mui-col-md-6 tutorial-content">
+    <h1>C Tutorial</h1>
+    <p><b>C programming</b> is a general-purpose, procedural, imperative computer programming language developed in 1972 by Dennis M. Ritchie at the Bell Telephone Laboratories to develop the UNIX operating system. C is the most widely used computer language. It keeps fluctuating at number one scale of popularity along with Java programming language, which is also equally popular and most widely used among modern software programmers.</p>
+    <h1>Why to Learn C Programming?</h1>
+    <p><b>C programming</b> language is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Software Development Domain. I will list down some of the key advantages of learning C Programming:</p>
+    <ul class="list">
+    <li><p>Easy to learn</p></li>
+    <li><p>Structured language</p></li>
+    <li><p>It produces efficient programs</p></li>
+    <li><p>It can handle low-level activities</p></li>
+    <li><p>It can be compiled on a variety of computer platforms</p></li>
+    </ul>
+    <h1>Facts about C</h1>
+    <ul class="list">
+    <li><p>C was invented to write an operating system called UNIX.</p></li>
+    <li><p>C is a successor of B language which was introduced around the early 1970s.</p></li>
+    <li><p>The language was formalized in 1988 by the American National Standard Institute (ANSI).</p></li>
+    <li><p>The UNIX OS was totally written in C.</p></li>
+    <li><p>Today C is the most widely used and popular System Programming Language.</p></li>
+    <li><p>Most of the state-of-the-art software have been implemented using C.</p></li>
+    </ul>
+    <h1>Hello World using C Programming.</h1>
+    <p>Just to give you a little excitement about <b>C programming</b>, I'm going to give you a small conventional C Programming Hello World program, You can try it using Demo link.</p>
+    <pre class="prettyprint notranslate prettyprinted" ><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+    
+    </span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="com">/* my first program in C */</span><span class="pln">
+       printf</span><span class="pun">(</span><span class="str">"Hello, World! \n"</span><span class="pun">);</span><span class="pln">
+       
+       </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span></pre>
+    <h1>Applications of C Programming</h1>
+    <p>C was initially used for system development work, particularly the programs that make-up the operating system. C was adopted as a system development language because it produces code that runs nearly as fast as the code written in assembly language. Some examples of the use of C are - </p>
+    <ul class="list">
+    <li><p>Operating Systems</p></li>
+    <li><p>Language Compilers</p></li>
+    <li><p>Assemblers</p></li>
+    <li><p>Text Editors</p></li>
+    <li><p>Print Spoolers</p></li>
+    <li><p>Network Drivers</p></li>
+    <li><p>Modern Programs</p></li>
+    <li><p>Databases</p></li>
+    <li><p>Language Interpreters</p></li>
+    <li><p>Utilities</p></li>
+    </ul>
+    </div>
+    <div class="mui-container">
+        <!-- Tutorial ToC Starts Here -->
+        <div class="mui-col-md-3 tutorial-toc">
+        <!-- Tutorial ToC Ends Here -->
+        <!-- Tutorial Content Starts Here -->
+        <div class="mui-col-md-6 tutorial-content">
+        <h1>C - Data Types</h1>
+        <hr>
+        </div>
+        </div>
+        <br>
+        <div class="clearer"></div>
+        <p>Data types in c refer to an extensive system used for declaring variables or functions of different types. The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.</p>
+        <p>The types in C can be classified as follows −</p>
+        <table class="table table-bordered">
+        <tbody><tr>
+        <th style="text-align:center;">Sr.No.</th>
+        <th style="text-align:center;">Types &amp; Description</th>
+        </tr>
+        <tr>
+        <td class="ts">1</td>
+        <td><p><b>Basic Types</b></p>
+        <p>They are arithmetic types and are further classified into: (a) integer types and (b) floating-point types.</p>
+        </td>
+        </tr>
+        <tr>
+        <td class="ts">2</td>
+        <td><p><b>Enumerated types</b></p>
+        <p>They are again arithmetic types and they are used to define variables that can only assign certain discrete integer values throughout the program.</p>
+        </td>
+        </tr>
+        <tr>
+        <td class="ts">3</td>
+        <td><p><b>The type void</b></p>
+        <p>The type specifier <i>void</i> indicates that no value is available.</p>
+        </td>
+        </tr>
+        <tr>
+        <td class="ts">4</td>
+        <td><p><b>Derived types</b></p>
+        <p>They include (a) Pointer types, (b) Array types, (c) Structure types, (d) Union types and (e) Function types.</p>
+        </td>
+        </tr>
+        </tbody></table>
+        <p>The array types and structure types are referred collectively as the aggregate types. The type of a function specifies the type of the function's return value. We will see the basic types in the following section, where as other types will be covered in the upcoming chapters.</p>
+        <h2>Integer Types</h2>
+        <p>The following table provides the details of standard integer types with their storage sizes and value ranges −</p>
+        <table style="text-align:center;" class="table table-bordered">
+        <tbody><tr>
+        <th style="width:23%;text-align:center;">Type</th>
+        <th style="width:20%;text-align:center;">Storage size</th>
+        <th style="text-align:center;">Value range</th>
+        </tr>
+        <tr>
+        <td>char</td>
+        <td>1 byte</td>
+        <td>-128 to 127 or 0 to 255</td>
+        </tr>
+        <tr>
+        <td>unsigned char</td>
+        <td>1 byte</td>
+        <td>0 to 255</td>
+        </tr>
+        <tr>
+        <td>signed char</td>
+        <td>1 byte</td>
+        <td>-128 to 127</td>
+        </tr>
+        <tr>
+        <td style="vertical-align:middle;">int</td>
+        <td style="vertical-align:middle;">2 or 4 bytes</td>
+        <td>-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647</td>
+        </tr>
+        <tr>
+        <td>unsigned int</td>
+        <td>2 or 4 bytes</td>
+        <td>0 to 65,535 or 0 to 4,294,967,295</td>
+        </tr>
+        <tr>
+        <td>short</td>
+        <td>2 bytes</td>
+        <td>-32,768 to 32,767</td>
+        </tr>
+        <tr>
+        <td>unsigned short</td>
+        <td>2 bytes</td>
+        <td>0 to 65,535</td>
+        </tr>
+        <tr>
+        <td>long</td>
+        <td>8 bytes or (4bytes for 32 bit OS)</td>
+        <td>-9223372036854775808 to 9223372036854775807</td>
+        </tr>
+        <tr>
+        <td>unsigned long</td>
+        <td>8 bytes</td>
+        <td>0 to 18446744073709551615</td>
+        </tr>
+        </tbody></table>
+        <p>To get the exact size of a type or a variable on a particular platform, you can use the <b>sizeof</b> operator. The expressions <i>sizeof(type)</i> yields the storage size of the object or type in bytes. Given below is an example to get the size of various type on a machine using different constant defined in limits.h header file −</p>
+
+        <pre class="prettyprint notranslate prettyprinted" ><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdlib.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;limits.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;float.h&gt;</span><span class="pln">
+        
+        </span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> argc</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">char</span><span class="pun">**</span><span class="pln"> argv</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        
+            printf</span><span class="pun">(</span><span class="str">"CHAR_BIT    :   %d\n"</span><span class="pun">,</span><span class="pln"> CHAR_BIT</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"CHAR_MAX    :   %d\n"</span><span class="pun">,</span><span class="pln"> CHAR_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"CHAR_MIN    :   %d\n"</span><span class="pun">,</span><span class="pln"> CHAR_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"INT_MAX     :   %d\n"</span><span class="pun">,</span><span class="pln"> INT_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"INT_MIN     :   %d\n"</span><span class="pun">,</span><span class="pln"> INT_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"LONG_MAX    :   %ld\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">long</span><span class="pun">)</span><span class="pln"> LONG_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"LONG_MIN    :   %ld\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">long</span><span class="pun">)</span><span class="pln"> LONG_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"SCHAR_MAX   :   %d\n"</span><span class="pun">,</span><span class="pln"> SCHAR_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"SCHAR_MIN   :   %d\n"</span><span class="pun">,</span><span class="pln"> SCHAR_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"SHRT_MAX    :   %d\n"</span><span class="pun">,</span><span class="pln"> SHRT_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"SHRT_MIN    :   %d\n"</span><span class="pun">,</span><span class="pln"> SHRT_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"UCHAR_MAX   :   %d\n"</span><span class="pun">,</span><span class="pln"> UCHAR_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"UINT_MAX    :   %u\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">int</span><span class="pun">)</span><span class="pln"> UINT_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"ULONG_MAX   :   %lu\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">long</span><span class="pun">)</span><span class="pln"> ULONG_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"USHRT_MAX   :   %d\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">short</span><span class="pun">)</span><span class="pln"> USHRT_MAX</span><span class="pun">);</span><span class="pln">
+        
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span></pre>
+        <p>When you compile and execute the above program, it produces the following result on Linux −</p>
+        <pre class="result notranslate">CHAR_BIT    :   8
+        CHAR_MAX    :   127
+        CHAR_MIN    :   -128
+        INT_MAX     :   2147483647
+        INT_MIN     :   -2147483648
+        LONG_MAX    :   9223372036854775807
+        LONG_MIN    :   -9223372036854775808
+        SCHAR_MAX   :   127
+        SCHAR_MIN   :   -128
+        SHRT_MAX    :   32767
+        SHRT_MIN    :   -32768
+        UCHAR_MAX   :   255
+        UINT_MAX    :   4294967295
+        ULONG_MAX   :   18446744073709551615
+        USHRT_MAX   :   65535
+        </pre>
+        <h2>Floating-Point Types</h2>
+        <p>The following table provide the details of standard floating-point types with storage sizes and value ranges and their precision −</p>
+        <table style="text-align:center;" class="table table-bordered">
+        <tbody><tr>
+        <th style="text-align:center;">Type</th>
+        <th style="text-align:center;">Storage size</th>
+        <th style="text-align:center;">Value range</th>
+        <th style="text-align:center;">Precision</th>
+        </tr>
+        <tr>
+        <td>float</td>
+        <td>4 byte</td>
+        <td>1.2E-38 to 3.4E+38</td>
+        <td>6 decimal places</td>
+        </tr>
+        <tr>
+        <td>double</td>
+        <td>8 byte</td>
+        <td>2.3E-308 to 1.7E+308</td>
+        <td>15 decimal places</td>
+        </tr>
+        <tr>
+        <td>long double</td>
+        <td>10 byte</td>
+        <td>3.4E-4932 to 1.1E+4932</td>
+        <td>19 decimal places</td>
+        </tr>
+        </tbody></table>
+        <p>The header file float.h defines macros that allow you to use these values and other details about the binary representation of real numbers in your programs. The following example prints the storage space taken by a float type and its range values −</p>
+        <pre class="prettyprint notranslate prettyprinted" ><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdlib.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;limits.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;float.h&gt;</span><span class="pln">
+        
+        </span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> argc</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">char</span><span class="pun">**</span><span class="pln"> argv</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        
+            printf</span><span class="pun">(</span><span class="str">"Storage size for float : %d \n"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">sizeof</span><span class="pun">(</span><span class="kwd">float</span><span class="pun">));</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"FLT_MAX     :   %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">float</span><span class="pun">)</span><span class="pln"> FLT_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"FLT_MIN     :   %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">float</span><span class="pun">)</span><span class="pln"> FLT_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"-FLT_MAX    :   %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">float</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln">FLT_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"-FLT_MIN    :   %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">float</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln">FLT_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"DBL_MAX     :   %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">double</span><span class="pun">)</span><span class="pln"> DBL_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"DBL_MIN     :   %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">double</span><span class="pun">)</span><span class="pln"> DBL_MIN</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"-DBL_MAX     :  %g\n"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">double</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln">DBL_MAX</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"Precision value: %d\n"</span><span class="pun">,</span><span class="pln"> FLT_DIG </span><span class="pun">);</span><span class="pln">
+        
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span></pre>
+        <p>When you compile and execute the above program, it produces the following result on Linux −</p>
+        <pre class="result notranslate">Storage size for float : 4 
+        FLT_MAX      :   3.40282e+38
+        FLT_MIN      :   1.17549e-38
+        -FLT_MAX     :   -3.40282e+38
+        -FLT_MIN     :   -1.17549e-38
+        DBL_MAX      :   1.79769e+308
+        DBL_MIN      :   2.22507e-308
+        -DBL_MAX     :  -1.79769e+308
+        Precision value: 6
+        </pre>
+        </div>
+        <div class="mui-container">
+            <!-- Tutorial ToC Starts Here -->
+            <div class="mui-col-md-3 tutorial-toc">
+            <div class="mui-col-md-6 tutorial-content">
+            <h1>C - Operators</h1>
+            <hr>
+            <br>
+            <p>An operator is a symbol that tells the compiler to perform specific mathematical or logical functions. C language is rich in built-in operators and provides the following types of operators</p>
+            <ul class="list">
+            <li>Arithmetic Operators</li>
+            <li>Relational Operators</li>
+            <li>Logical Operators</li>
+            <li>Bitwise Operators</li>
+            <li>Assignment Operators</li>
+            <li>Misc Operators</li>
+            </ul>
+            <p>We will, in this chapter, look into the way each operator works.</p>
+            <h2>Arithmetic Operators</h2>
+            <p>The following table shows all the arithmetic operators supported by the C language. Assume variable <b>A</b> holds 10 and variable <b>B</b> holds 20 then −</p>
+            <p></p>
+            <table class="table table-bordered">
+            <tbody><tr>
+            <th style="width:10%;text-align:center;">Operator</th>
+            <th style="width:55%;text-align:center;">Description</th>
+            <th style="text-align:center;">Example</th>
+            </tr>
+            <tr>
+            <td style="text-align:center;">+</td>
+            <td>Adds two operands.</td>
+            <td style="text-align:center;">A + B = 30</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;">−</td>
+            <td>Subtracts second operand from the first.</td>
+            <td style="text-align:center;">A − B = -10</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;">*</td>
+            <td>Multiplies both operands.</td>
+            <td style="text-align:center;">A * B = 200</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;">/</td>
+            <td>Divides numerator by de-numerator.</td>
+            <td style="text-align:center;">B / A = 2</td>
+            </tr>
+            <tr>
+            <td class="ts">%</td>
+            <td>Modulus Operator and remainder of after an integer division.</td>
+            <td class="ts">B % A = 0</td>
+            </tr>
+            <tr>
+            <td class="ts">++</td>
+            <td>Increment operator increases the integer value by one.</td>
+            <td class="ts">A++ = 11</td>
+            </tr>
+            <tr>
+            <td class="ts">--</td>
+            <td>Decrement operator decreases the integer value by one.</td>
+            <td class="ts">A-- = 9</td>
+            </tr>
+            </tbody></table>
+            <h2>Relational Operators</h2>
+            <p>The following table shows all the relational operators supported by C. Assume variable <b>A</b> holds 10 and variable <b>B</b> holds 20 then −</p>
+            <table class="table table-bordered">
+            <tbody><tr>
+            <th style="width:10%;text-align:center;">Operator</th>
+            <th style="width:55%;text-align:center;">Description</th>
+            <th style="text-align:center;">Example</th>
+            </tr>
+            <tr>
+            <td class="ts">==</td>
+            <td>Checks if the values of two operands are equal or not. If yes, then the condition becomes true.</td>
+            <td class="ts">(A == B) is not true. </td>
+            </tr>
+            <tr>
+            <td class="ts">!=</td>
+            <td>Checks if the values of two operands are equal or not. If the values are not equal, then the condition becomes true.</td>
+            <td class="ts">(A != B) is true.</td>
+            </tr>
+            <tr>
+            <td class="ts">&gt;</td>
+            <td>Checks if the value of left  operand is greater than the value of right operand. If yes, then the condition becomes true.</td>
+            <td class="ts">(A &gt; B) is not true.</td>
+            </tr>
+            <tr>
+            <td class="ts">&lt;</td>
+            <td>Checks if the value of left operand is less than the value of right operand. If yes, then the condition becomes true.</td>
+            <td class="ts">(A &lt; B) is true.</td>
+            </tr>
+            <tr>
+            <td class="ts">&gt;=</td>
+            <td>Checks if the value of left operand is greater than or equal to the value of right operand. If yes, then the condition becomes true.</td>
+            <td class="ts">(A &gt;= B) is not true.</td>
+            </tr>
+            <tr>
+            <td class="ts">&lt;=</td>
+            <td>Checks if the value of left operand is less than or equal to the value of right operand. If yes, then the condition becomes true.</td>
+            <td class="ts">(A &lt;= B) is true.</td>
+            </tr>
+            </tbody></table>
+            <h2>Logical Operators</h2>
+            <p>Following table shows all the logical operators supported by C language. Assume variable <b>A</b> holds 1 and variable <b>B</b> holds 0, then −</p>
+            <table class="table table-bordered">
+            <tbody><tr>
+            <th style="width:10%;text-align:center;">Operator</th>
+            <th style="width:55%;text-align:center;">Description</th>
+            <th style="text-align:center;">Example</th>
+            </tr>
+            <tr>
+            <td class="ts">&amp;&amp;</td>
+            <td>Called Logical AND operator. If both the operands are non-zero, then the condition becomes true.</td>
+            <td class="ts">(A &amp;&amp; B) is false.</td>
+            </tr>
+            <tr>
+            <td class="ts">||</td>
+            <td>Called Logical OR Operator. If any of the two operands is non-zero, then the condition becomes true.</td>
+            <td class="ts">(A || B) is true.</td>
+            </tr>
+            <tr>
+            <td class="ts">!</td>
+            <td>Called Logical NOT Operator. It is used to reverse the logical state of its operand. If a condition is true, then Logical NOT operator will make it false.</td>
+            <td class="ts">!(A &amp;&amp; B) is true.</td>
+            </tr>
+            </tbody></table>
+            <h2>Bitwise Operators</h2>
+            <p>Bitwise operator works on bits and perform bit-by-bit operation. The truth tables for &amp;, |, and ^ is as follows −</p>
+            <table style="text-align:center;" class="table table-bordered">
+            <tbody><tr>
+            <th style="width:20%;text-align:center;">p</th>
+            <th style="width:20%;text-align:center;">q</th>
+            <th style="width:20%;text-align:center;">p &amp; q</th>
+            <th style="width:20%;text-align:center;">p | q</th>
+            <th style="width:20%;text-align:center;">p ^ q</th>
+            </tr>
+            <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            </tr>
+            </tbody></table>
+            <p>Assume A = 60 and B = 13 in binary format, they will be as follows −</p>
+            <p>A = 0011 1100</p>
+            <p>B = 0000 1101</p>
+            <p>-----------------</p>
+            <p>A&amp;B = 0000 1100</p>
+            <p>A|B = 0011 1101</p>
+            <p>A^B = 0011 0001</p>
+            <p>~A = 1100 0011</p>
+            <p>The following table lists the bitwise operators supported by C. Assume variable 'A' holds 60 and variable 'B' holds 13, then −</p>
+            <table class="table table-bordered">
+            <tbody><tr>
+            <th style="width:10%;text-align:center;">Operator</th>
+            <th style="width:55%;text-align:center;">Description</th>
+            <th style="text-align:center;">Example</th>
+            </tr>
+            <tr>
+            <td class="ts">&amp;</td>
+            <td>Binary AND Operator copies a bit to the result if it exists in both operands. </td>
+            <td>(A &amp; B) = 12, i.e., 0000 1100</td>
+            </tr>
+            <tr>
+            <td class="ts">|</td>
+            <td>Binary OR Operator copies a bit if it exists in either operand.</td>
+            <td>(A | B) = 61, i.e., 0011 1101</td>
+            </tr>
+            <tr>
+            <td class="ts">^</td>
+            <td>Binary XOR Operator copies the bit if it is set in one operand but not both. </td>
+            <td>(A ^ B) = 49, i.e., 0011 0001</td>
+            </tr>
+            <tr>
+            <td class="ts">~</td>
+            <td style="vertical-align:middle;">Binary One's Complement Operator is unary and has the effect of 'flipping' bits.</td>
+            <td>(~A ) = ~(60), i.e,. -0111101</td>
+            </tr>
+            <tr>
+            <td class="ts">&lt;&lt;</td>
+            <td>Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.</td>
+            <td style="vertical-align:middle;">A &lt;&lt; 2 = 240 i.e., 1111 0000</td>
+            </tr>
+            <tr>
+            <td class="ts">&gt;&gt;</td>
+            <td>Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.</td>
+            <td style="vertical-align:middle;">A &gt;&gt; 2 = 15 i.e., 0000 1111</td>
+            </tr>
+            </tbody></table>
+            <h2>Assignment Operators</h2>
+            <p>The following table lists the assignment operators supported by the C language −</p>
+            <table class="table table-bordered">
+            <tbody><tr>
+            <th style="width:10%;text-align:center;">Operator</th>
+            <th style="width:55%;text-align:center;">Description</th>
+            <th style="text-align:center;">Example</th>
+            </tr>
+            <tr>
+            <td class="ts">=</td>
+            <td>Simple assignment operator. Assigns values from right side operands to left side operand</td>
+            <td style="vertical-align:middle;">C = A + B will assign the value of A + B to C</td>
+            </tr>
+            <tr>
+            <td class="ts">+=</td>
+            <td>Add AND assignment operator. It adds the right operand to the left operand and assign the result to the left operand.</td>
+            <td style="vertical-align:middle;">C += A is equivalent to C = C + A</td>
+            </tr>
+            <tr>
+            <td class="ts">-=</td>
+            <td>Subtract AND assignment operator. It subtracts the right operand from the left operand and assigns the result to the left operand.</td>
+            <td style="vertical-align:middle;">C -= A is equivalent to C = C - A</td>
+            </tr>
+            <tr>
+            <td class="ts">*=</td>
+            <td>Multiply AND assignment operator. It multiplies the right operand with the left operand and assigns the result to the left operand.</td>
+            <td style="vertical-align:middle;">C *= A is equivalent to C = C * A</td>
+            </tr>
+            <tr>
+            <td class="ts">/=</td>
+            <td>Divide AND assignment operator. It divides the left operand with the right operand and assigns the result to the left operand.</td>
+            <td style="vertical-align:middle;">C /= A is equivalent to C = C / A</td>
+            </tr>
+            <tr>
+            <td class="ts">%=</td>
+            <td>Modulus AND assignment operator. It takes modulus using two operands and assigns the result to the left operand.</td>
+            <td style="vertical-align:middle;">C %= A is equivalent to C = C % A</td>
+            </tr>
+            <tr>
+            <td class="ts">&lt;&lt;=</td>
+            <td>Left shift AND assignment operator.</td>
+            <td>C &lt;&lt;= 2 is same as  C = C &lt;&lt; 2</td>
+            </tr>
+            <tr>
+            <td class="ts">&gt;&gt;=</td>
+            <td>Right shift AND assignment operator.</td>
+            <td>C &gt;&gt;= 2 is same as  C = C &gt;&gt; 2</td>
+            </tr>
+            <tr>
+            <td class="ts">&amp;=</td>
+            <td>Bitwise AND assignment operator.</td>
+            <td>C &amp;= 2 is same as  C = C &amp; 2</td>
+            </tr>
+            <tr>
+            <td class="ts">^=</td>
+            <td>Bitwise exclusive OR and assignment operator.</td>
+            <td>C ^= 2 is same as  C = C ^ 2</td>
+            </tr>
+            <tr>
+            <td class="ts">|=</td>
+            <td>Bitwise inclusive OR and assignment operator.</td>
+            <td>C |= 2 is same as  C = C | 2</td>
+            </tr>
+            </tbody></table>
+            <h2>Misc Operators ↦ sizeof &amp; ternary</h2>
+            <p>Besides the operators discussed above, there are a few other important operators including <b>sizeof</b> and <b>? :</b> supported by the C Language.</p>
+            <table class="table table-bordered">
+            <tbody><tr>
+            <th style="width:10%">Operator</th>
+            <th style="width:43%;">Description</th>
+            <th style="text-align:center;">Example</th>
+            </tr>
+            <tr>
+            <td class="ts">sizeof()</td>
+            <td style="vertical-align:middle;">Returns the size of a variable.</td>
+            <td>sizeof(a), where a is integer, will return 4.</td>
+            </tr>
+            <tr>
+            <td class="ts">&amp;</td>
+            <td style="vertical-align:middle;">Returns the address of a variable.</td>
+            <td>&amp;a; returns the actual address of the variable.</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;">*</td>
+            <td>Pointer to a variable.</td>
+            <td>*a;</td>
+            </tr>
+            <tr>
+            <td class="ts">? :</td>
+            <td style="vertical-align:middle;">Conditional Expression.</td>
+            <td>If Condition is true ? then value X : otherwise value Y</td>
+            </tr>
+            </tbody></table>
+            <h2>Operators Precedence in C</h2>
+            <p>Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.</p>
+            <p>For example, x = 7 + 3 * 2; here, x is assigned 13, not 20 because operator * has a higher precedence than +, so it first gets multiplied with 3*2 and then adds into 7.</p>
+            <p>Here, operators with the highest precedence appear at the top of the table, those with the lowest appear at the bottom. Within an expression, higher precedence operators will be evaluated first.</p>
+            <table style="text-align:center;" class="table table-bordered">
+            <tbody><tr> 
+            <th style="text-align:center;">Category</th> 
+            <th style="text-align:center;">Operator</th>
+            <th style="text-align:center;">Associativity</th> 
+            </tr> 
+            <tr> 
+            <td>Postfix</td>
+            <td>() [] -&gt; . ++ - -</td> 
+            <td>Left to right</td> 
+            </tr>
+            <tr> 
+            <td>Unary</td> 
+            <td>+  -  !  ~  ++  - -  (type)*  &amp; sizeof</td> 
+            <td>Right to left</td>
+            </tr> 
+            <tr> 
+            <td>Multiplicative</td> 
+            <td>*  /  %</td>
+            <td>Left to right</td> 
+            </tr> 
+            <tr> 
+            <td>Additive</td>
+            <td>+  -</td> 
+            <td>Left to right</td> 
+            </tr>
+            <tr> 
+            <td>Shift</td> 
+            <td>&lt;&lt; &gt;&gt;</td> 
+            <td>Left to right</td> 
+            </tr> 
+            <tr> 
+            <td>Relational</td>
+            <td>&lt; &lt;=  &gt; &gt;=</td> 
+            <td>Left to right</td> 
+            </tr>
+            <tr> 
+            <td>Equality</td> 
+            <td>==  !=</td> 
+            <td>Left to right</td> 
+            </tr> 
+            <tr> 
+            <td>Bitwise AND</td>
+            <td>&amp;</td> 
+            <td>Left to right</td> 
+            </tr> 
+            <tr> 
+            <td>Bitwise XOR</td> 
+            <td>^</td> 
+            <td>Left to right</td>
+            </tr> 
+            <tr> 
+            <td>Bitwise OR</td> 
+            <td>|</td> 
+            <td>Left to right</td>
+            </tr> 
+            <tr> 
+            <td>Logical AND</td>
+            <td>&amp;&amp;</td> 
+            <td>Left to right</td>
+            </tr>
+            <tr>
+            <td>Logical OR</td> 
+            <td>||</td> 
+            <td>Left to right</td>
+            </tr> 
+            <tr> 
+            <td>Conditional</td>
+            <td>?:</td> 
+            <td>Right to left</td> 
+            </tr>
+            <tr>
+            <td>Assignment</td> 
+            <td>=  +=  -=  *=  /=  %=&gt;&gt;=  &lt;&lt;=  &amp;=  ^= |=</td>
+            <td>Right to left</td>
+            </tr>
+            <tr> 
+            <td>Comma</td> 
+            <td>,</td> 
+            <td>Left to right</td>
+            </tr> 
+            </tbody></table>
+            </div>
+            <!-- Tutorial Content Ends Here -->
+            <!-- Right Column Starts Here -->
+            <!-- Right Column Ends Here -->
+            </div>
+            <div class="mui-col-md-6 tutorial-content">
+                <h1>C - Loops</h1>
+                <hr/>
+                <br>
+                <div class="mui-container-fluid button-borders">
+    
+                </div>
+                <p>You may encounter situations, when a block of code needs to be executed several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+                <p>Programming languages provide various control structures that allow for more complicated execution paths.</p>
+                <p>A loop statement allows us to execute a statement or group of statements multiple times. Given below is the general form of a loop statement in most of the programming languages &minus;</p>
+                <p>C programming language provides the following types of loops to handle looping requirements.</p>
+                <table class="table table-bordered">
+                <tr>
+                <th style="text-align:center;">Sr.No.</th>
+                <th style="text-align:center;">Loop Type &amp; Description</th>
+                </tr>
+                <tr>
+                <td class="ts">1</td>
+                <td><p>while loop</p>
+                <p>Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p></td>
+                </tr>
+                <tr>
+                <td class="ts">2</td>
+                <td><p>for loop</p>
+                <p>Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p></td>
+                </tr>
+                <tr>
+                <td class="ts">3</td>
+                <td><p>do..while loop</p>
+                <p>It is more like a while statement, except that it tests the condition at the end of the loop body.</p></td>
+                </tr>
+                <tr>
+                <td class="ts">4</td>
+                <td><p>nested loops</p>
+                <p>You can use one or more loops inside any other while, for, or do..while loop.</p></td>
+                </tr>
+                </table>
+                <h2>Loop Control Statements</h2>
+                <p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+                <p>C supports the following control statements.</p>
+                <table class="table table-bordered">
+                <tr>
+                <th style="text-align:center;">Sr.No.</th>
+                <th style="text-align:center;">Control Statement &amp; Description</th>
+                </tr>
+                <tr>
+                <td class="ts">1</td>
+                <td><p>break statement</p>
+                <p>Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to the statement immediately following the loop or switch.</p></td>
+                </tr>
+                <tr>
+                <td class="ts">2</td>
+                <td><p>continue statement</p>
+                <p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p></td>
+                </tr>
+                <tr>
+                <td class="ts">3</td>
+                <td><p>goto statement</p>
+                <p>Transfers control to the labeled statement.</p></td>
+                </tr>
+                </table>
+                <h2>The Infinite Loop</h2>
+                <p>A loop becomes an infinite loop if a condition never becomes false. The <b>for</b> loop is traditionally used for this purpose. Since none of the three expressions that form the 'for' loop are required, you can make an endless loop by leaving the conditional expression empty.</p>
+                <pre class="prettyprint notranslate">
+                #include &lt;stdio.h&gt;
+                 
+                int main () {
+                
+                   for( ; ; ) {
+                      printf("This loop will run forever.\n");
+                   }
+                
+                   return 0;
+                }
+                </pre>
+                <p>When the conditional expression is absent, it is assumed to be true. You may have an initialization and increment expression, but C programmers more commonly use the for(;;) construct to signify an infinite loop.</p>
+                <p><b>NOTE</b> &minus; You can terminate an infinite loop by pressing Ctrl + C keys.</p>
+                <h1>C - Arrays</h1>
+<hr/>
+<br>
+<p>Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.</p>
+<p>Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.</p>
+<p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.</p>
+<img src="Images/arrays.jpg" alt="Arrays in C" />
+<h2>Declaring Arrays</h2>
+<p>To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows &minus;</p>
+<pre class="result notranslate">
+type arrayName [ arraySize ];
+</pre>
+<p>This is called a <i>single-dimensional</i> array. The <b>arraySize</b> must be an integer constant greater than zero and <b>type</b> can be any valid C data type. For example, to declare a 10-element array called <b>balance</b> of type double, use this statement &minus;</p>
+<pre class="result notranslate">
+double balance[10];
+</pre>
+<p>Here <i>balance</i> is a variable array which is sufficient to hold up to 10 double numbers.</p>
+<h2>Initializing Arrays</h2>
+<p>You can initialize an array in C either one by one or using a single statement as follows &minus;</p>
+<pre class="result notranslate">
+double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+</pre>
+<p>The number of values between braces { } cannot be larger than the number of elements that we declare for the array between square brackets [ ].</p>
+<p>If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore, if you write &minus;</p>
+<pre class="result notranslate">
+double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+</pre>
+<p>You will create exactly the same array as you did in the previous example. Following is an example to assign a single element of the array &minus;</p>
+<pre class="result notranslate">
+balance[4] = 50.0;
+</pre>
+<p>The above statement assigns the 5<sup>th</sup> element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus 1. Shown below is the pictorial representation of the array we discussed above &minus;</p>
+<h2>Accessing Array Elements</h2>
+<p>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example &minus;</p>
+<pre class="result notranslate">
+double salary = balance[9];
+</pre>
+<p>The above statement will take the 10<sup>th</sup> element from the array and assign the value to salary variable. The following example Shows how to use all the three above mentioned concepts viz. declaration, assignment, and accessing arrays &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;stdio.h&gt;
+ 
+int main () {
+
+   int n[ 10 ]; /* n is an array of 10 integers */
+   int i,j;
+ 
+   /* initialize elements of array n to 0 */         
+   for ( i = 0; i &lt; 10; i++ ) {
+      n[ i ] = i + 100; /* set element at location i to i + 100 */
+   }
+   
+   /* output each array element's value */
+   for (j = 0; j &lt; 10; j++ ) {
+      printf("Element[%d] = %d\n", j, n[j] );
+   }
+ 
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Element[0] = 100
+Element[1] = 101
+Element[2] = 102
+Element[3] = 103
+Element[4] = 104
+Element[5] = 105
+Element[6] = 106
+Element[7] = 107
+Element[8] = 108
+Element[9] = 109
+</pre>
+<h1>C - Functions</h1>
+<hr/>
+<br>
+<p>A function is a group of statements that together perform a task. Every C program has at least one function, which is <b>main()</b>, and all the most trivial programs can define additional functions.</p>
+<p>You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division is such that each function performs a specific task.</p>
+<p>A function <b>declaration</b> tells the compiler about a function's name, return type, and parameters. A function <b>definition</b> provides the actual body of the function.</p>
+<p>The C standard library provides numerous built-in functions that your program can call. For example, <b>strcat()</b> to concatenate two strings, <b>memcpy()</b> to copy one memory location to another location, and many more functions.</p>
+<p>A function can also be referred as a method or a sub-routine or a procedure, etc.</p>
+<h2>Defining a Function</h2>
+<p>The general form of a function definition in C programming language is as follows &minus;</p>
+<pre class="prettyprint notranslate">
+return_type function_name( parameter list ) {
+   body of the function
+}
+</pre>
+<p>A function definition in C programming consists of a <i>function header</i> and a <i>function body</i>. Here are all the parts of a function &minus;</p>
+<ul class="list">
+<li><p><b>Return Type</b> &minus; A function may return a value. The <b>return_type</b> is the data type of the value the function returns. Some functions perform the desired operations without returning a value. In this case, the return_type is the keyword <b>void</b>.</p></li>
+<li><p><b>Function Name</b> &minus; This is the actual name of the function. The function name and the parameter list together constitute the function signature.</p></li>
+<li><p><b>Parameters</b> &minus; A parameter is like a placeholder. When a function is invoked, you pass a value to the parameter. This value is referred to as actual parameter or argument. The parameter list refers to the type, order, and number of the parameters of a function. Parameters are optional; that is, a function may contain no parameters.</p></li>
+<li><p><b>Function Body</b> &minus; The function body contains a collection of statements that define what the function does.</p></li>
+</ul>
+<h2>Example</h2>
+<p>Given below is the source code for a function called <b>max()</b>. This function takes two parameters num1 and num2 and returns the maximum value between the two &minus;</p>
+<pre class="prettyprint notranslate">
+/* function returning the max between two numbers */
+int max(int num1, int num2) {
+
+   /* local variable declaration */
+   int result;
+ 
+   if (num1 &gt; num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   return result; 
+}
+</pre>
+<h2>Function Declarations</h2>
+<p>A function <b>declaration</b> tells the compiler about a function name and how to call the function. The actual body of the function can be defined separately.</p>
+<p>A function declaration has the following parts &minus;</p>
+<pre class="result notranslate">
+return_type function_name( parameter list );
+</pre>
+<p>For the above defined function max(), the function declaration is as follows &minus;</p>
+<pre class="result notranslate">
+int max(int num1, int num2);
+</pre>
+<p>Parameter names are not important in function declaration only their type is required, so the following is also a valid declaration &minus;</p>
+<pre class="result notranslate">
+int max(int, int);
+</pre>
+<p>Function declaration is required when you define a function in one source file and you call that function in another file. In such case, you should declare the function at the top of the file calling the function.</p>
+<h2>Calling a Function</h2>
+<p>While creating a C function, you give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task.</p>
+<p>When a program calls a function, the program control is transferred to the called function. A called function performs a defined task and when its return statement is executed or when its function-ending closing brace is reached, it returns the program control back to the main program.</p>
+<p>To call a function, you simply need to pass the required parameters along with the function name, and if the function returns a value, then you can store the returned value. For example &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;stdio.h&gt;
+ 
+/* function declaration */
+int max(int num1, int num2);
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 100;
+   int b = 200;
+   int ret;
+ 
+   /* calling a function to get max value */
+   ret = max(a, b);
+ 
+   printf( "Max value is : %d\n", ret );
+ 
+   return 0;
+}
+ 
+/* function returning the max between two numbers */
+int max(int num1, int num2) {
+
+   /* local variable declaration */
+   int result;
+ 
+   if (num1 &gt; num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   return result; 
+}
+</pre>
+<p>We have kept max() along with main() and compiled the source code. While running the final executable, it would produce the following result &minus;</p>
+<pre class="result notranslate">
+Max value is : 200
+</pre>
+<h2>Function Arguments</h2>
+<p>If a function is to use arguments, it must declare variables that accept the values of the arguments. These variables are called the <b>formal parameters</b> of the function.</p>
+<p>Formal parameters behave like other local variables inside the function and are created upon entry into the function and destroyed upon exit.</p>
+<p>While calling a function, there are two ways in which arguments can be passed to a function &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Call Type &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p>Call by Value</p>
+<p>This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.</p></td> 
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p>Call by Reference</p>
+<p>This method copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.</p></td> 
+</tr>
+</table>
+<p>By default, C uses <b>call by value</b> to pass arguments. In general, it means the code within a function cannot alter the arguments used to call the function.</p>
+    </body>
+    </html>

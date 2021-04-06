@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C++</title>
+</head>
+<body>
+    <h1>C++ Basic Syntax</h1>
+<hr />
+<br>
+<div class="clearer"></div>
+<p>When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.</p>
+<ul class="list">
+<li><p><b>Object</b> &minus; Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors - wagging, barking, eating. An object is an instance of a class. </p></li>
+<li><p><b>Class</b> &minus; A class can be defined as a template/blueprint that describes the behaviors/states that object of its type support.</p></li>
+<li><p><b>Methods</b> &minus; A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.</p></li>
+<li><p><b>Instance Variables</b> &minus; Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.</p></li>
+</ul>
+<h2>C++ Program Structure</h2>
+<p>Let us look at a simple code that would print the words <i>Hello World</i>.</p>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt;
+using namespace std;
+
+// main() is where program execution begins.
+int main() {
+   cout &lt;&lt; "Hello World"; // prints Hello World
+   return 0;
+}
+</pre>
+<p>Let us look at the various parts of the above program &minus;</p>
+<ul class="list">
+<li><p>The C++ language defines several headers, which contain information that is either necessary or useful to your program. For this program, the header <b>&lt;iostream&gt;</b> is needed.</p></li>
+<li><p>The line <b>using namespace std;</b> tells the compiler to use the std namespace. Namespaces are a relatively recent addition to C++.</p></li>
+<li><p>The next line '<b>// main() is where program execution begins.</b>' is a single-line comment available in C++. Single-line comments begin with // and stop at the end of the line.</p></li>
+<li><p>The line <b>int main()</b> is the main function where program execution begins.</p></li>
+<li><p>The next line <b>cout &lt;&lt; "Hello World";</b> causes the message "Hello World" to be displayed on the screen.</p></li>
+<li><p>The next line <b>return 0;</b> terminates main( )function and causes it to return the value 0 to the calling process.</p></li>
+</ul>
+<h2>Compile and Execute C++ Program</h2>
+<p>Let's look at how to save the file, compile and run the program. Please follow the steps given below &minus;</p>
+<ul class="list">
+<li><p>Open a text editor and add the code as above.</p></li>
+<li><p>Save the file as: hello.cpp</p></li>
+<li><p>Open a command prompt and go to the directory where you saved the file.</p></li>
+<li><p>Type 'g++ hello.cpp' and press enter to compile your code. If there are no errors in your code the command prompt will take you to the next line and would generate a.out executable file.</p></li>
+<li><p>Now, type 'a.out' to run your program.</p></li>	
+<li><p>You will be able to see ' Hello World ' printed on the window.</p></li>
+</ul>
+<pre class="result notranslate">
+$ g++ hello.cpp
+$ ./a.out
+Hello World
+</pre>
+<p>Make sure that g++ is in your path and that you are running it in the directory containing file hello.cpp.</p>
+<h2>Semicolons and Blocks in C++</h2>
+<p>In C++, the semicolon is a statement terminator. That is, each individual statement must be ended with a semicolon. It indicates the end of one logical entity.</p>
+<p>For example, following are three different statements &minus;</p>
+<pre class="result notranslate">
+x = y;
+y = y + 1;
+add(x, y);
+</pre>
+<p>A block is a set of logically connected statements that are surrounded by opening and closing braces. For example &minus;</p>
+<pre class="result notranslate">
+{
+   cout &lt;&lt; "Hello World"; // prints Hello World
+   return 0;
+}
+</pre>
+<p>C++ does not recognize the end of the line as a terminator. For this reason, it does not matter where you put a statement in a line. For example &minus;</p>
+<pre class="result notranslate">
+x = y;
+y = y + 1;
+add(x, y);
+</pre>
+<p>is the same as</p>
+<pre class="result notranslate">
+x = y; y = y + 1; add(x, y);
+</pre>
+<h2>C++ Identifiers</h2>
+<p>A C++ identifier is a name used to identify a variable, function, class, module, or any other user-defined item. An identifier starts with a letter A to Z or a to z or an underscore (_) followed by zero or more letters, underscores, and digits (0 to 9).</p>
+<p>C++ does not allow punctuation characters such as @, $, and % within identifiers. C++ is a case-sensitive programming language.  Thus, <b>Manpower</b> and <b>manpower</b> are two different identifiers in C++.</p>
+<p>Here are some examples of acceptable identifiers &minus;</p>
+<pre class="result notranslate">
+mohd       zara    abc   move_name  a_123
+myname50   _temp   j     a23b9      retVal
+</pre>
+<h2>C++ Keywords</h2>
+<p>The following list shows the reserved words in C++. These reserved words may not be used as constant or variable or any other identifier names.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td>asm</td>
+<td>else</td>
+<td>new</td>
+<td>this</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>enum</td>
+<td>operator</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>explicit</td>
+<td>private</td>
+<td>true</td>
+</tr>
+<tr>
+<td>break</td>
+<td>export</td>
+<td>protected</td>
+<td>try</td>
+</tr>
+<tr>
+<td>case</td>
+<td>extern</td>
+<td>public</td>
+<td>typedef</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>false</td>
+<td>register</td>
+<td>typeid</td>
+</tr>
+<tr>
+<td>char</td>
+<td>float</td>
+<td>reinterpret_cast</td>
+<td>typename</td>
+</tr>
+<tr>
+<td>class</td>
+<td>for</td>
+<td>return</td>
+<td>union</td>
+</tr>
+<tr>
+<td>const</td>
+<td>friend</td>
+<td>short</td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td>const_cast</td>
+<td>goto</td>
+<td>signed</td>
+<td>using</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>if</td>
+<td>sizeof</td>
+<td>virtual</td>
+</tr>
+<tr>
+<td>default</td>
+<td>inline</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>int</td>
+<td>static_cast</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>do</td>
+<td>long</td>
+<td>struct</td>
+<td>wchar_t</td>
+</tr>
+<tr>
+<td>double</td>
+<td>mutable</td>
+<td>switch</td>
+<td>while</td>
+</tr>
+<tr>
+<td>dynamic_cast</td>
+<td>namespace</td>
+<td>template</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+<h2>Trigraphs</h2>
+<p>A few characters have an alternative representation, called a trigraph sequence. A trigraph is a three-character sequence that represents a single character and the sequence always starts with two question marks.</p>
+<p>Trigraphs are expanded anywhere they appear, including within string literals and character literals, in comments, and in preprocessor directives.</p>
+<p>Following are most frequently used trigraph sequences &minus;</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;">Trigraph</th>
+<th style="text-align:center;">Replacement</th>
+</tr>
+<tr>
+<td>??=</td>
+<td>#</td>
+</tr>
+<tr>
+<td>??/</td>
+<td>\</td>
+</tr>
+<tr>
+<td>??'</td>
+<td>^</td>
+</tr>
+<tr>
+<td>??(</td>
+<td>[</td>
+</tr>
+<tr>
+<td>??)</td>
+<td>]</td>
+</tr>
+<tr>
+<td>??!</td>
+<td>|</td>
+</tr>
+<tr>
+<td>??&lt;</td>
+<td>{</td>
+</tr>
+<tr>
+<td>??&gt;</td>
+<td>}</td>
+</tr>
+<tr>
+<td>??-</td>
+<td>~</td>
+</tr>
+</table>
+<p>All the compilers do not support trigraphs and they are not advised to be used because of their confusing nature.</p>
+<h2>Whitespace in C++</h2>
+<p>A line containing only whitespace, possibly with a comment, is known as a blank line, and C++ compiler totally ignores it.</p>
+<p>Whitespace is the term used in C++ to describe blanks, tabs, newline characters and comments. Whitespace separates one part of a statement from another and enables the compiler to identify where one element in a statement, such as int, ends and the next element begins.</p>
+<h3>Statement 1</h3>
+<pre class="result notranslate">
+int age;
+</pre>
+<p>In the above statement there must be at least one whitespace character (usually a space) between int and age for the compiler to be able to distinguish them.</p>
+<h3>Statement 2</h3>
+<pre class="result notranslate">
+fruit = apples + oranges;   // Get the total fruit
+</pre>
+<p>In the above statement 2, no whitespace characters are necessary between fruit and =, or between = and apples, although you are free to include some if you wish for readability purpose.</p>
+<h1>C++ Classes and Objects</h1>
+<hr />
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="clearer"></div>
+<p>The main purpose of C++ programming is to add object orientation to the C programming language and classes are the central feature of C++ that supports object-oriented programming and are often called user-defined types.</p>
+<p>A class is used to specify the form of an object and it combines data representation and methods for manipulating that data into one neat package. The data and functions within a class are called members of the class.</p>
+<h2>C++ Class Definitions</h2>
+<p>When you define a class, you define a blueprint for a data type. This doesn't actually define any data, but it does define what the class name means, that is, what an object of the class will consist of and what operations can be performed on such an object.</p>
+<p>A class definition starts with the keyword <b>class</b> followed by the class name; and the class body, enclosed by a pair of curly braces. A class definition must be followed either by a semicolon or a list of declarations. For example, we defined the Box data type using the keyword <b>class</b> as follows &minus;</p>
+<pre class="result notranslate">
+class Box {
+   public:
+      double length;   // Length of a box
+      double breadth;  // Breadth of a box
+      double height;   // Height of a box
+};
+</pre>
+<p>The keyword <b>public</b> determines the access attributes of the members of the class that follows it. A public member can be accessed from outside the class anywhere within the scope of the class object. You can also specify the members of a class as <b>private</b> or <b>protected</b> which we will discuss in a sub-section.</p>
+<h2>Define C++ Objects</h2>
+<p>A class provides the blueprints for objects, so basically an object is created from a class. We declare objects of a class with exactly the same sort of declaration that we declare variables of basic types. Following statements declare two objects of class Box &minus;</p>
+<pre class="result notranslate">
+Box Box1;          // Declare Box1 of type Box
+Box Box2;          // Declare Box2 of type Box
+</pre>
+<p>Both of the objects Box1 and Box2 will have their own copy of data members.</p>
+<h2>Accessing the Data Members</h2>
+<p>The public data members of objects of a class can be accessed using the direct member access operator (.). Let us try the following example to make the things clear &minus;</p>
+<div class="demo-view">
+</div>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class Box {
+   public:
+      double length;   // Length of a box
+      double breadth;  // Breadth of a box
+      double height;   // Height of a box
+};
+
+int main() {
+   Box Box1;        // Declare Box1 of type Box
+   Box Box2;        // Declare Box2 of type Box
+   double volume = 0.0;     // Store the volume of a box here
+ 
+   // box 1 specification
+   Box1.height = 5.0; 
+   Box1.length = 6.0; 
+   Box1.breadth = 7.0;
+
+   // box 2 specification
+   Box2.height = 10.0;
+   Box2.length = 12.0;
+   Box2.breadth = 13.0;
+   
+   // volume of box 1
+   volume = Box1.height * Box1.length * Box1.breadth;
+   cout &lt;&lt; "Volume of Box1 : " &lt;&lt; volume &lt;&lt;endl;
+
+   // volume of box 2
+   volume = Box2.height * Box2.length * Box2.breadth;
+   cout &lt;&lt; "Volume of Box2 : " &lt;&lt; volume &lt;&lt;endl;
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Volume of Box1 : 210
+Volume of Box2 : 1560
+</pre>
+<p>It is important to note that private and protected members can not be accessed directly using direct member access operator (.). We will learn how private and protected members can be accessed.</p>
+<h2>Classes and Objects in Detail</h2>
+<p>So far, you have got very basic idea about C++ Classes and Objects. There are further interesting concepts related to C++ Classes and Objects which we will discuss in various sub-sections listed below &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No</th>
+<th style="text-align:center;">Concept &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p>Class Member Functions</p>
+<p>A member function of a class is a function that has its definition or its prototype within the class definition like any other variable.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p>Class Access Modifiers</p>
+<p>A class member can be defined as public, private or protected. By default members would be assumed as private.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p>Constructor &amp; Destructor</p>
+<p>A class constructor is a special function in a class that is called when a new object of the class is created. A destructor is also a special function which is called when created object is deleted.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p>Copy Constructor</p>
+<p>The copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><p>Friend Functions</p>
+<p>A <b>friend</b> function is permitted full access to private and protected members of a class.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><p>Inline Functions</p>
+<p>With an inline function, the compiler tries to expand the code in the body of the function in place of a call to the function.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><p>this Pointer</p>
+<p>Every object has a special pointer <b>this</b> which points to the object itself.</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><p>Pointer to C++ Classes</p>
+<p>A pointer to a class is done exactly the same way a pointer to a structure is. In fact a class is really just a structure with functions in it.</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><p>Static Members of a Class</p>
+<p>Both data members and function members of a class can be declared as static.</p></td>
+</tr>
+</table>
+<h1>C++ Inheritance</h1>
+<hr />
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="clearer"></div>
+<p>One of the most important concepts in object-oriented programming is that of inheritance. Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. This also provides an opportunity to reuse the code functionality and fast implementation time.</p>
+<p>When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the <b>base</b> class, and the new class is referred to as the <b>derived</b> class.</p>
+<p>The idea of inheritance implements the <b>is a</b> relationship. For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on.</p>
+<h2>Base and Derived Classes</h2>
+<p>A class can be derived from more than one classes, which means it can inherit data and functions from multiple base classes. To define a derived class, we use a class derivation list to specify the base class(es). A class derivation list names one or more base classes and has the form &minus;</p>
+<pre class="result notranslate">
+class derived-class: access-specifier base-class
+</pre>
+<p>Where access-specifier is one of <b>public, protected,</b> or <b>private</b>, and base-class is the name of a previously defined class. If the access-specifier is not used, then it is private by default.</p>
+<p>Consider a base class <b>Shape</b> and its derived class <b>Rectangle</b> as follows &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt;
+ 
+using namespace std;
+
+// Base class
+class Shape {
+   public:
+      void setWidth(int w) {
+         width = w;
+      }
+      void setHeight(int h) {
+         height = h;
+      }
+      
+   protected:
+      int width;
+      int height;
+};
+
+// Derived class
+class Rectangle: public Shape {
+   public:
+      int getArea() { 
+         return (width * height); 
+      }
+};
+
+int main(void) {
+   Rectangle Rect;
+ 
+   Rect.setWidth(5);
+   Rect.setHeight(7);
+
+   // Print the area of the object.
+   cout &lt;&lt; "Total area: " &lt;&lt; Rect.getArea() &lt;&lt; endl;
+
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Total area: 35
+</pre>
+<h2>Access Control and Inheritance</h2>
+<p>A derived class can access all the non-private members of its base class. Thus base-class members that should not be accessible to the member functions of derived classes should be declared private in the base class.</p>
+<p>We can summarize the different access types according to - who can access them in the following way &minus;</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th width="25%" style="text-align:center;">Access</th>
+<th width="25%" style="text-align:center;">public</th>
+<th width="25%" style="text-align:center;">protected</th>
+<th width="25%" style="text-align:center;">private</th>
+</tr>
+<tr>
+<td>Same class</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Derived classes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Outside classes</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</table>
+<p>A derived class inherits all base class methods with the following exceptions &minus;</p>
+<ul class="list">
+<li>Constructors, destructors and copy constructors of the base class.</li>
+<li>Overloaded operators of the base class.</li>
+<li>The friend functions of the base class.</li>
+</ul>
+<h2>Type of Inheritance</h2>
+<p>When deriving a class from a base class, the base class may be inherited through <b>public, protected</b> or <b> private</b> inheritance. The type of inheritance is specified by the access-specifier as explained above.</p>
+<p>We hardly use <b>protected</b> or <b> private</b> inheritance, but <b>public</b> inheritance is commonly used. While using different type of inheritance, following rules are applied &minus;</p>
+<ul class="list">
+<li><p><b>Public Inheritance</b> &minus; When deriving a class from a <b>public</b> base class, <b>public</b> members of the base class become <b>public</b> members of the derived class and <b>protected</b> members of the base class become <b>protected</b> members of the derived class. A base class's <b>private</b> members are never accessible directly from a derived class, but can be accessed through calls to the <b>public</b> and <b>protected</b> members of the base class.</p></li>
+<li><p><b>Protected Inheritance</b> &minus;  When deriving from a <b>protected</b> base class, <b>public</b> and <b>protected</b> members of the base class become <b>protected</b> members of the derived class.</p></li>
+<li><p><b>Private Inheritance</b> &minus; When deriving from a <b>private</b> base class, <b>public</b> and <b>protected</b> members of the base class become <b>private</b> members of the derived class.</p></li>
+</ul>
+<h2>Multiple Inheritance</h2>
+<p>A C++ class can inherit members from more than one class and here is the extended syntax &minus;</p>
+<pre class="result notranslate">
+class derived-class: access baseA, access baseB....
+</pre>
+<p>Where access is one of <b>public, protected,</b> or <b>private</b> and would be given for every base class and they will be separated by comma as shown above. Let us try the following example &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt;
+ 
+using namespace std;
+
+// Base class Shape
+class Shape {
+   public:
+      void setWidth(int w) {
+         width = w;
+      }
+      void setHeight(int h) {
+         height = h;
+      }
+      
+   protected:
+      int width;
+      int height;
+};
+
+// Base class PaintCost
+class PaintCost {
+   public:
+      int getCost(int area) {
+         return area * 70;
+      }
+};
+
+// Derived class
+class Rectangle: public Shape, public PaintCost {
+   public:
+      int getArea() {
+         return (width * height); 
+      }
+};
+
+int main(void) {
+   Rectangle Rect;
+   int area;
+ 
+   Rect.setWidth(5);
+   Rect.setHeight(7);
+
+   area = Rect.getArea();
+   
+   // Print the area of the object.
+   cout &lt;&lt; "Total area: " &lt;&lt; Rect.getArea() &lt;&lt; endl;
+
+   // Print the total cost of painting
+   cout &lt;&lt; "Total paint cost: $" &lt;&lt; Rect.getCost(area) &lt;&lt; endl;
+
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Total area: 35
+Total paint cost: $2450
+</pre>
+<h1>C++ Overloading (Operator and Function)</h1>
+<hr />
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="clearer"></div>
+<p>C++ allows you to specify more than one definition for a <b>function</b> name or an <b>operator</b> in the same scope, which is called <b>function overloading</b> and <b>operator overloading</b> respectively.</p>
+<p>An overloaded declaration is a declaration that is declared with the same name as a previously declared declaration in the same scope, except that both declarations have different arguments and obviously different definition (implementation).</p>
+<p>When you call an overloaded <b>function</b> or <b>operator</b>, the compiler determines the most appropriate definition to use, by comparing the argument types you have used to call the function or operator with the parameter types specified in the definitions. The process of selecting the most appropriate overloaded function or operator is called <b>overload resolution</b>.</p>
+<h2>Function Overloading in C++</h2>
+<p>You can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. You cannot overload function declarations that differ only by return type.</p>
+<p>Following is the example where same function <b>print()</b> is being used to print different data types &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt;
+using namespace std;
+ 
+class printData {
+   public:
+      void print(int i) {
+        cout &lt;&lt; "Printing int: " &lt;&lt; i &lt;&lt; endl;
+      }
+      void print(double  f) {
+        cout &lt;&lt; "Printing float: " &lt;&lt; f &lt;&lt; endl;
+      }
+      void print(char* c) {
+        cout &lt;&lt; "Printing character: " &lt;&lt; c &lt;&lt; endl;
+      }
+};
+
+int main(void) {
+   printData pd;
+ 
+   // Call print to print integer
+   pd.print(5);
+   
+   // Call print to print float
+   pd.print(500.263);
+   
+   // Call print to print character
+   pd.print("Hello C++");
+ 
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Printing int: 5
+Printing float: 500.263
+Printing character: Hello C++
+</pre>
+<h2>Operators Overloading in C++</h2>
+<p>You can redefine or overload most of the built-in operators available in C++. Thus, a programmer can use operators with user-defined types as well.</p>
+<p>Overloaded operators are functions with special names: the keyword "operator" followed by the symbol for the operator being defined. Like any other function, an overloaded operator has a return type and a parameter list.</p>
+<pre class="result notranslate">
+Box operator+(const Box&amp;);
+</pre>
+<p>declares the addition operator that can be used to <b>add</b> two Box objects and returns final Box object. Most overloaded operators may be defined as ordinary non-member functions or as class member functions. In case we define above function as non-member function of a class then we would have to pass two arguments for each operand as follows &minus;</p>
+<pre class="result notranslate">
+Box operator+(const Box&amp;, const Box&amp;);
+</pre>
+<p>Following is the example to show the concept of operator over loading using a member function. Here an object is passed as an argument whose properties will be accessed using this object, the object which will call this operator can be accessed using <b>this</b> operator as explained below &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Box {
+   public:
+      double getVolume(void) {
+         return length * breadth * height;
+      }
+      void setLength( double len ) {
+         length = len;
+      }
+      void setBreadth( double bre ) {
+         breadth = bre;
+      }
+      void setHeight( double hei ) {
+         height = hei;
+      }
+      
+      // Overload + operator to add two Box objects.
+      Box operator+(const Box&amp; b) {
+         Box box;
+         box.length = this-&gt;length + b.length;
+         box.breadth = this-&gt;breadth + b.breadth;
+         box.height = this-&gt;height + b.height;
+         return box;
+      }
+      
+   private:
+      double length;      // Length of a box
+      double breadth;     // Breadth of a box
+      double height;      // Height of a box
+};
+
+// Main function for the program
+int main() {
+   Box Box1;                // Declare Box1 of type Box
+   Box Box2;                // Declare Box2 of type Box
+   Box Box3;                // Declare Box3 of type Box
+   double volume = 0.0;     // Store the volume of a box here
+ 
+   // box 1 specification
+   Box1.setLength(6.0); 
+   Box1.setBreadth(7.0); 
+   Box1.setHeight(5.0);
+ 
+   // box 2 specification
+   Box2.setLength(12.0); 
+   Box2.setBreadth(13.0); 
+   Box2.setHeight(10.0);
+ 
+   // volume of box 1
+   volume = Box1.getVolume();
+   cout &lt;&lt; "Volume of Box1 : " &lt;&lt; volume &lt;&lt;endl;
+ 
+   // volume of box 2
+   volume = Box2.getVolume();
+   cout &lt;&lt; "Volume of Box2 : " &lt;&lt; volume &lt;&lt;endl;
+
+   // Add two object as follows:
+   Box3 = Box1 + Box2;
+
+   // volume of box 3
+   volume = Box3.getVolume();
+   cout &lt;&lt; "Volume of Box3 : " &lt;&lt; volume &lt;&lt;endl;
+
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Volume of Box1 : 210
+Volume of Box2 : 1560
+Volume of Box3 : 5400
+</pre>
+<h2>Overloadable/Non-overloadableOperators</h2>
+<p>Following is the list of operators which can be overloaded &minus;</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td width="16.6%">+</td>
+<td width="16.6%">-</td>
+<td width="16.6%">*</td>
+<td width="16.6%">/</td>
+<td width="16.6%">%</td>
+<td width="16.6%">^</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>|</td>
+<td>~</td>
+<td>!</td>
+<td>,</td>
+<td>=</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>&gt;</td>
+<td>&lt;=</td>
+<td>&gt;=</td>
+<td>++</td>
+<td>--</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>&gt;&gt;</td>
+<td>==</td>
+<td>!=</td>
+<td>&amp;&amp;</td>
+<td>||</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>-=</td>
+<td>/=</td>
+<td>%=</td>
+<td>^=</td>
+<td>&amp;=</td>
+</tr>
+<tr>
+<td>|=</td>
+<td>*=</td>
+<td>&lt;&lt;=</td>
+<td>&gt;&gt;=</td>
+<td>[]</td>
+<td>()</td>
+</tr>
+<tr>
+<td>-&gt;</td>
+<td>-&gt;*</td>
+<td>new</td>
+<td>new []</td>
+<td>delete</td>
+<td>delete []</td>
+</tr>
+</table>
+<p>Following is the list of operators, which can not be overloaded &minus;</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td width="25%">::</td>
+<td width="25%">.*</td>
+<td width="25%">.</td>
+<td width="25%">?:</td>
+</tr>
+</table>
+<h2 id="examples">Operator Overloading Examples</h2>
+<p>Here are various operator overloading examples to help you in understanding the concept.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Operators &amp; Example</th>
+</tr>
+<tr>
+<td style="text-align:center;">1</td>
+<td><p>Unary Operators Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">2</td>
+<td><p>Binary Operators Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">3</td>
+<td><p>Relational Operators Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">4</td>
+<td><p>Input/Output Operators Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">5</td>
+<td><p> ++ and -- Operators Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">6</td>
+<td><p>Assignment Operators Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">7</td>
+<td><p>Function call () Operator  Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">8</td>
+<td><p>Subscripting [] Operator Overloading</p></td>
+</tr>
+<tr>
+<td style="text-align:center;">9</td>
+<td><p>Class Member Access Operator -&gt; Overloading</p></td>
+</tr>
+</table>
+<h1>Polymorphism in C++</h1>
+<hr />
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="clearer"></div>
+<p>The word <b>polymorphism</b> means having many forms. Typically, polymorphism occurs when there is a hierarchy of classes and they are related by inheritance.</p>
+<p>C++ polymorphism means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.</p>
+<p>Consider the following example where a base class has been derived by other two classes &minus;</p>
+<pre class="prettyprint notranslate">
+#include &lt;iostream&gt; 
+using namespace std;
+ 
+class Shape {
+   protected:
+      int width, height;
+      
+   public:
+      Shape( int a = 0, int b = 0){
+         width = a;
+         height = b;
+      }
+      int area() {
+         cout &lt;&lt; "Parent class area :" &lt;&lt;endl;
+         return 0;
+      }
+};
+class Rectangle: public Shape {
+   public:
+      Rectangle( int a = 0, int b = 0):Shape(a, b) { }
+      
+      int area () { 
+         cout &lt;&lt; "Rectangle class area :" &lt;&lt;endl;
+         return (width * height); 
+      }
+};
+
+class Triangle: public Shape {
+   public:
+      Triangle( int a = 0, int b = 0):Shape(a, b) { }
+      
+      int area () { 
+         cout &lt;&lt; "Triangle class area :" &lt;&lt;endl;
+         return (width * height / 2); 
+      }
+};
+
+// Main function for the program
+int main() {
+   Shape *shape;
+   Rectangle rec(10,7);
+   Triangle  tri(10,5);
+
+   // store the address of Rectangle
+   shape = &amp;rec;
+   
+   // call rectangle area.
+   shape-&gt;area();
+
+   // store the address of Triangle
+   shape = &amp;tri;
+   
+   // call triangle area.
+   shape-&gt;area();
+   
+   return 0;
+}
+</pre>
+<p>When the above code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Parent class area :
+Parent class area :
+</pre>
+<p>The reason for the incorrect output is that the call of the function area() is being set once by the compiler as the version defined in the base class. This is called <b>static resolution</b> of the function call, or <b>static linkage</b> - the function call is fixed before the program is executed. This is also sometimes called <b>early binding</b> because the area() function is set during the compilation of the program.</p>
+<p>But now, let's make a slight modification in our program and precede the declaration of area() in the Shape class with the keyword <b>virtual</b> so that it  looks like this &minus;</p>
+<pre class="result notranslate">
+class Shape {
+   protected:
+      int width, height;
+      
+   public:
+      Shape( int a = 0, int b = 0) {
+         width = a;
+         height = b;
+      }
+      virtual int area() {
+         cout &lt;&lt; "Parent class area :" &lt;&lt;endl;
+         return 0;
+      }
+};
+</pre>
+<p>After this slight modification, when the previous example code is compiled and executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Rectangle class area
+Triangle class area
+</pre>
+<p>This time, the compiler looks at the contents of the pointer instead of it's type. Hence, since addresses of objects of tri and rec classes are stored in *shape the respective area() function is called.</p>
+<p>As you can see, each of the child classes has a separate implementation for the function area(). This is how <b>polymorphism</b> is generally used. You have different classes with a function of the same name, and even the same parameters, but with different implementations.</p>
+<h2>Virtual Function</h2>
+<p>A <b>virtual</b> function is a function in a base class that is declared using the keyword <b>virtual</b>. Defining in a base class a virtual function, with another version in a derived class, signals to the compiler that we don't want static linkage for this function.</p>
+<p>What we do want is the selection of the function to be called at any given point in the program to be based on the kind of object for which it is called.  This sort of operation is referred to as <b>dynamic linkage</b>, or <b>late binding</b>.</p>
+<h2>Pure Virtual Functions</h2>
+<p>It is possible that you want to include a virtual function in a base class so that it may be redefined in a derived class to suit the objects of that class, but that there is no meaningful definition you could give for the function in the base class.</p>
+<p>We can change the virtual function area() in the base class to the following &minus;</p>
+<pre class="result notranslate">
+class Shape {
+   protected:
+      int width, height;
+
+   public:
+      Shape(int a = 0, int b = 0) {
+         width = a;
+         height = b;
+      }
+      
+      // pure virtual function
+      virtual int area() = 0;
+};
+</pre>
+<p>The = 0 tells the compiler that the function has no body  and above virtual function will be called <b>pure virtual function</b>.</p>
+</body>
+</html>
